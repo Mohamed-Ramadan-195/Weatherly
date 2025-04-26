@@ -30,7 +30,7 @@ import com.example.weatherly.ui.theme.SecondaryColor
 
 @Composable
 fun CurrentWeatherScreen (
-    navigateToForecast: () -> Unit
+    navigateToForecast: (Double, Double) -> Unit
 ) {
     val currentWeatherViewModel: CurrentWeatherViewModel = hiltViewModel()
     val currentWeatherState = currentWeatherViewModel.currentWeatherState.value
@@ -44,7 +44,7 @@ fun CurrentWeatherScreen (
 
 @Composable
 fun CurrentWeatherScreenContent(
-    navigateToForecast: () -> Unit,
+    navigateToForecast: (Double, Double) -> Unit,
     currentWeatherState: CurrentWeatherState,
     currentWeatherEvent: (CurrentWeatherEvent) -> Unit,
 ) {
@@ -110,7 +110,12 @@ fun CurrentWeatherScreenContent(
            SpacerHeight(Dimen.MediumSpace)
        }
        Button (
-           onClick = navigateToForecast
+           onClick = {
+               navigateToForecast(
+                   weather.coord.latitude,
+                   weather.coord.longitude
+               )
+           }
        ) {
           Text (
             text = "Forecast",

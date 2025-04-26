@@ -53,20 +53,6 @@ data class CurrentWeather(
 }
 
 @Parcelize
-data class Clouds(
-    @SerializedName("all")
-    val all: Int
-): Parcelable
-
-@Parcelize
-data class Coord(
-    @SerializedName("lat")
-    val latitude: Double,
-    @SerializedName("lon")
-    val longitude: Double
-): Parcelable
-
-@Parcelize
 data class Main(
     @SerializedName("feels_like")
     val feelsLike: Double,
@@ -98,18 +84,6 @@ data class Sys(
     val sunset: Int,
     @SerializedName("type")
     val type: Int
-): Parcelable
-
-@Parcelize
-data class Weather(
-    @SerializedName("description")
-    val description: String,
-    @SerializedName("icon")
-    val icon: String,
-    @SerializedName("id")
-    val id: Int,
-    @SerializedName("main")
-    val main: String
 ): Parcelable
 
 @Parcelize

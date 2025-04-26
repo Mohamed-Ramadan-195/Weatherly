@@ -1,0 +1,8 @@
+package com.example.weatherly.presentation.screen.ForecastWeather
+
+sealed class ForecastWeatherIntent {
+    data class FetchForecastWeather(
+        val latitude: Double,
+        val longitude: Double
+    ) : ForecastWeatherIntent()
+}

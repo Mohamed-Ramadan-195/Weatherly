@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.weatherly.data.utils.DataConstant
 import com.example.weatherly.domain.datastore.DatastoreManager
 import com.example.weatherly.domain.model.CityWeather
 import kotlinx.coroutines.flow.Flow
@@ -43,6 +44,4 @@ class DatastoreManagerImpl (
     }
 }
 
-const val CITY_DATASTORE = "city_data"
-
-val Context.preferenceDataStore: DataStore<Preferences> by preferencesDataStore(name = CITY_DATASTORE)
+val Context.preferenceDataStore: DataStore<Preferences> by preferencesDataStore(name = DataConstant.CITY_DATASTORE)

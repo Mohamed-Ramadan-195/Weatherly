@@ -25,9 +25,11 @@ fun NavGraph (
             route = Route.CurrentWeather.route,
         ) {
             CurrentWeatherScreen(
-                navigateToForecast = {
+                navigateToForecast = { latitude, longitude ->
                     navigateToForecastWeatherScreen(
-                        navController = navHostController
+                        navController = navHostController,
+                        latitude = latitude,
+                        longitude = longitude
                     )
                 }
             )
@@ -46,13 +48,23 @@ fun NavGraph (
                 )
             }
         ) {
-            ForecastWeatherScreen()
+            val latitude = navHostController.previousBackStackEntry?.savedStateHandle?.get<Double>("latitude")
+            val longitude = navHostController.previousBackStackEntry?.savedStateHandle?.get<Double>("longitude")
+
+            ForecastWeatherScreen(
+                latitude = latitude ?: 0.0,
+                longitude = longitude ?: 0.0,
+            )
         }
     }
 }
 
 private fun navigateToForecastWeatherScreen (
     navController: NavController,
+    latitude: Double,
+    longitude: Double
 ) {
+    navController.currentBackStackEntry?.savedStateHandle?.set("latitude", latitude)
+    navController.currentBackStackEntry?.savedStateHandle?.set("longitude", longitude)
     navController.navigate(Route.ForecastWeather.route)
 }

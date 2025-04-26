@@ -10,6 +10,7 @@ import com.example.weatherly.domain.usecase.datastore.CityWeatherUseCases
 import com.example.weatherly.domain.usecase.weather.GetCurrentWeatherUseCase
 import com.example.weatherly.domain.usecase.datastore.ReadCityWeather
 import com.example.weatherly.domain.usecase.datastore.SaveCityWeather
+import com.example.weatherly.domain.usecase.weather.GetForecastWeatherUseCase
 import com.example.weatherly.domain.usecase.weather.WeatherUseCases
 import dagger.Module
 import dagger.Provides
@@ -43,7 +44,8 @@ object AppModule {
         weatherRepository: WeatherRepository
     ): WeatherUseCases {
         return WeatherUseCases(
-            getCurrentWeatherUseCase = GetCurrentWeatherUseCase(weatherRepository)
+            getCurrentWeatherUseCase = GetCurrentWeatherUseCase(weatherRepository),
+            getForecastWeatherUseCase = GetForecastWeatherUseCase(weatherRepository)
         )
     }
 
