@@ -1,26 +1,31 @@
 package com.example.weatherly.presentation.screen.ForecastWeather
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.weatherly.presentation.utils.Dimen
+import com.example.weatherly.ui.theme.PrimaryColor
 
 @Composable
 fun ForecastWeatherScreen (
 
 ) {
-    Box (
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-
-    }
+    ForecastWeatherScreenContent()
 }
 
 @Composable
-@Preview(showBackground = true)
-fun ForecastWeatherScreenPreview() {
-    ForecastWeatherScreen()
+fun ForecastWeatherScreenContent (
+
+) {
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .background(PrimaryColor)
+            .padding(all = Dimen.SmallSpace)
+    ) {
+
+    }
 }

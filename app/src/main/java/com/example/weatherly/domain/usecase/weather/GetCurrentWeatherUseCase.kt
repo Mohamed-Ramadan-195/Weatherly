@@ -1,4 +1,4 @@
-package com.example.weatherly.domain.usecase
+package com.example.weatherly.domain.usecase.weather
 
 import com.example.weatherly.data.dto.CurrentWeather
 import com.example.weatherly.domain.repository.WeatherRepository

@@ -82,6 +82,7 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil3.coil.compose)
     implementation(libs.coil.network.okhttp)
 
     // DataStore-Preferences

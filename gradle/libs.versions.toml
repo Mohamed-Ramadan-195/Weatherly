@@ -2,10 +2,11 @@
 accompanistSystemuicontroller = "0.34.0"
 agp = "8.9.2"
 coilCompose = "2.6.0"
+coilComposeVersion = "3.0.4"
 coilNetworkOkhttp = "3.0.4"
 converterGson = "2.11.0"
 coreSplashscreen = "1.0.1"
-datastorePreferences = "1.1.5"
+datastorePreferences = "1.1.1"
 foundation = "1.8.0"
 hiltVersion = "2.51.1"
 hiltNavigationVersion = "1.2.0"
@@ -58,6 +59,7 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 
 # Coil
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coil3-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilComposeVersion" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttp" }
 
 # DataStore Preferences

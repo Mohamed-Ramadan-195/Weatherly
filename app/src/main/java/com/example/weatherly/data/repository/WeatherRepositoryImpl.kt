@@ -15,7 +15,7 @@ class WeatherRepositoryImpl (
             val response = weatherService.getCurrentWeather(city)
             emit(response)
         }.catch {
-            TODO()
+            println("error: ${it.message}")
         }
     }
 }

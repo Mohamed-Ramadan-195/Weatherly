@@ -9,8 +9,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.weatherly.presentation.navigation.NavGraph
 import com.example.weatherly.ui.theme.WeatherlyTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private lateinit var navController: NavHostController
