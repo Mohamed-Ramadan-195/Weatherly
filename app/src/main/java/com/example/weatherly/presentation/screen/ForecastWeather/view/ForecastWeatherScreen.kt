@@ -1,4 +1,4 @@
-package com.example.weatherly.presentation.screen.ForecastWeather
+package com.example.weatherly.presentation.screen.ForecastWeather.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -10,6 +10,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.weatherly.presentation.screen.ForecastWeather.viewmodel.ForecastWeatherViewModel
+import com.example.weatherly.presentation.screen.ForecastWeather.state.ForecastWeatherIntent
+import com.example.weatherly.presentation.screen.ForecastWeather.state.ForecastWeatherState
 import com.example.weatherly.presentation.utils.Dimen
 import com.example.weatherly.ui.theme.PrimaryColor
 

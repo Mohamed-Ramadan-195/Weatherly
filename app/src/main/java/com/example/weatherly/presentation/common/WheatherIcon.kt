@@ -10,22 +10,27 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.weatherly.R
-import com.example.weatherly.data.dto.Weather
 import com.example.weatherly.presentation.utils.Constant
 
 @Composable
 fun WeatherIcon(
-    weather: Weather
+    icon: String
 ) {
     val context = LocalContext.current
     AsyncImage (
         modifier = Modifier.size(100.dp),
         model = ImageRequest.Builder(context)
-            .data("${Constant.BASE_IMAGE_URL}${weather.icon}@2x.png")
-            .crossfade(true).build(),
+            .data("${Constant.BASE_IMAGE_URL}${icon}@2x.png")
+            .crossfade(true)
+            .listener(
+                onStart = { /* Log or debug */ },
+                onSuccess = { _, _ -> /* Log success */ },
+                onError = { _, throwable -> throwable.throwable.printStackTrace() }
+            )
+            .build(),
         contentDescription = "Weather Icon",
         contentScale = ContentScale.FillBounds,
         placeholder = painterResource(R.drawable.cloudy),
-        error = painterResource(R.drawable.green_coludy),
+        error = painterResource(R.drawable.ic_launcher_background)
     )
 }

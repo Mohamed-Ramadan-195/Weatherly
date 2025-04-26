@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.weatherly.presentation.screen.CurrentWeather.view.CurrentWeatherScreen
-import com.example.weatherly.presentation.screen.ForecastWeather.ForecastWeatherScreen
+import com.example.weatherly.presentation.screen.ForecastWeather.view.ForecastWeatherScreen
 
 @Composable
 fun NavGraph (

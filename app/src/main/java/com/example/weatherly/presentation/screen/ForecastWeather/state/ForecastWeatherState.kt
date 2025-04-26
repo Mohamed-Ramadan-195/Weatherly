@@ -1,4 +1,4 @@
-package com.example.weatherly.presentation.screen.ForecastWeather
+package com.example.weatherly.presentation.screen.ForecastWeather.state
 
 import com.example.weatherly.data.dto.ForecastWeather
 
