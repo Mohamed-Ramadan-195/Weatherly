@@ -1,4 +1,4 @@
-package com.example.weatherly.domain.datastore
+package com.example.weatherly.domain.manager
 
 import kotlinx.coroutines.flow.Flow
 

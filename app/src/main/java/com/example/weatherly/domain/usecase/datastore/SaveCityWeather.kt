@@ -1,6 +1,6 @@
 package com.example.weatherly.domain.usecase.datastore
 
-import com.example.weatherly.domain.datastore.DatastoreManager
+import com.example.weatherly.domain.manager.DatastoreManager
 
 class SaveCityWeather (
     private val datastoreManager: DatastoreManager

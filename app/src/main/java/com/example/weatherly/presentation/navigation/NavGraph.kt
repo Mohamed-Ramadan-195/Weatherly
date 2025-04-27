@@ -50,7 +50,7 @@ fun NavGraph (
             val city = navHostController.previousBackStackEntry?.savedStateHandle?.get<String>("city")
 
             ForecastWeatherScreen(
-                city = city?: "No city found, please try again",
+                city = city?: "No city found",
                 navigateUp = {
                     navHostController.navigateUp()
                 }

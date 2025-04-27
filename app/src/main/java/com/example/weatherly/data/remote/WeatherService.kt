@@ -2,7 +2,7 @@ package com.example.weatherly.data.remote
 
 import com.example.weatherly.data.dto.CurrentWeather
 import com.example.weatherly.data.dto.ForecastWeather
-import com.example.weatherly.di.Constant
+import com.example.weatherly.utils.Constant
 import retrofit2.http.GET
 import retrofit2.http.Query
 

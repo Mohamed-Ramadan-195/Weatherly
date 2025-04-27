@@ -8,5 +8,4 @@ object Dimen {
     val UnderMediumSpace = 12.dp
     val MediumSpace = 16.dp
     val LargeSpace = 24.dp
-    val ExtraLargeSpace = 32.dp
 }

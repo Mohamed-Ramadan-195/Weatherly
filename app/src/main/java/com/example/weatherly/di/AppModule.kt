@@ -1,10 +1,10 @@
 package com.example.weatherly.di
 
 import android.app.Application
-import com.example.weatherly.data.datastore.DatastoreManagerImpl
+import com.example.weatherly.data.manager.DatastoreManagerImpl
 import com.example.weatherly.data.remote.WeatherService
 import com.example.weatherly.data.repository.WeatherRepositoryImpl
-import com.example.weatherly.domain.datastore.DatastoreManager
+import com.example.weatherly.domain.manager.DatastoreManager
 import com.example.weatherly.domain.repository.WeatherRepository
 import com.example.weatherly.domain.usecase.datastore.CityWeatherUseCases
 import com.example.weatherly.domain.usecase.weather.GetCurrentWeatherUseCase
@@ -12,6 +12,7 @@ import com.example.weatherly.domain.usecase.datastore.ReadCityWeather
 import com.example.weatherly.domain.usecase.datastore.SaveCityWeather
 import com.example.weatherly.domain.usecase.weather.GetForecastWeatherUseCase
 import com.example.weatherly.domain.usecase.weather.WeatherUseCases
+import com.example.weatherly.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
