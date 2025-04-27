@@ -1,5 +1,5 @@
 # 📌 Description
-### Weatherly is a weather discovery app that provides real-time weather updates, forecasts for upcoming days, and the ability to search and save favorite cities. With a modern UI built using Jetpack Compose and MVI Architecture, it ensures a smooth and interactive user experience. The app leverages OpenWeatherMap API for accurate, live weather data.
+### Weatherly is a weather discovery app that provides real-time weather updates, forecasts for upcoming days, and the ability to search and save favorite cities. With a modern UI built using Jetpack Compose and (MVI + MVVM) Architecture, it ensures a smooth and interactive user experience.
 
 # 📌 Tech Stack & Tools used
 ### 🔹 Kotlin, Jetpack Compose, MVVM, MVI
