@@ -74,83 +74,85 @@ fun CurrentWeatherScreenContent(
           onSearch = { currentWeatherEvent(CurrentWeatherEvent.CityWeather) }
        )
        SpacerHeight(Dimen.MediumSpace)
-       BaseText(
-           text = "${current.location.name}, ${current.location.country}",
-           fontSize = 24
-       )
-       BaseText(
-           text = current.location.region,
-           fontWeight = FontWeight.Normal
-       )
-       WeatherIcon(condition = current.current.condition)
-       Row (
-           modifier = Modifier.fillMaxWidth(),
-           horizontalArrangement = Arrangement.SpaceBetween,
-           verticalAlignment = Alignment.CenterVertically,
-       ) {
+       if (currentWeatherState.city.isNotEmpty()) {
            BaseText(
-               text = "${current.current.temperatureC.toInt()} °C",
-               fontSize = 48,
+               text = "${current.location.name}, ${current.location.country}",
+               fontSize = 24
            )
-           Column {
-               BaseText(current.location.localtime.take(10))
-               BaseText(current.location.localtime.takeLast(5))
-           }
-       }
-       SpacerHeight(Dimen.SmallSpace)
-       Divider()
-       SpacerHeight(Dimen.SmallSpace)
-       BaseText("Current Weather: ${current.current.condition.text}")
-       SpacerHeight(Dimen.SmallSpace)
-       Row (
-           modifier = Modifier
-               .fillMaxWidth()
-               .background(
-                   shape = RoundedCornerShape(Dimen.SmallSpace),
-                   color = SecondaryColor
-               ).padding(Dimen.ExtraSmallSpace),
-           horizontalArrangement = Arrangement.SpaceEvenly,
-           verticalAlignment = Alignment.CenterVertically
-       ) {
-           WeatherImage(R.drawable.wind)
-           Column {
-               BaseText("Wind")
+           BaseText(
+               text = current.location.region,
+               fontWeight = FontWeight.Normal
+           )
+           WeatherIcon(condition = current.current.condition)
+           Row (
+               modifier = Modifier.fillMaxWidth(),
+               horizontalArrangement = Arrangement.SpaceBetween,
+               verticalAlignment = Alignment.CenterVertically,
+           ) {
                BaseText(
-                   text = "${current.current.windKph.toInt()} km/h",
-                   fontSize = 24,
-                   color = PrimaryColor
+                   text = "${current.current.temperatureC.toInt()} °C",
+                   fontSize = 48,
+               )
+               Column {
+                   BaseText(current.location.localtime.take(10))
+                   BaseText(current.location.localtime.takeLast(5))
+               }
+           }
+           SpacerHeight(Dimen.SmallSpace)
+           Divider()
+           SpacerHeight(Dimen.SmallSpace)
+           BaseText("Current Weather: ${current.current.condition.text}")
+           SpacerHeight(Dimen.SmallSpace)
+           Row (
+               modifier = Modifier
+                   .fillMaxWidth()
+                   .background(
+                       shape = RoundedCornerShape(Dimen.SmallSpace),
+                       color = SecondaryColor
+                   ).padding(Dimen.ExtraSmallSpace),
+               horizontalArrangement = Arrangement.SpaceEvenly,
+               verticalAlignment = Alignment.CenterVertically
+           ) {
+               WeatherImage(R.drawable.wind)
+               Column {
+                   BaseText("Wind")
+                   BaseText(
+                       text = "${current.current.windKph.toInt()} km/h",
+                       fontSize = 24,
+                       color = PrimaryColor
+                   )
+               }
+               WeatherImage(R.drawable.pressure)
+               Column {
+                   BaseText("Pressure")
+                   BaseText(
+                       text = "${current.current.pressureMb.toInt()} mb",
+                       fontSize = 24,
+                       color = PrimaryColor
+                   )
+               }
+           }
+           SpacerHeight(Dimen.LargeSpace)
+           IconButton (
+               modifier = Modifier.clip(CircleShape).fillMaxWidth(),
+               onClick = {
+                   navigateToForecast(current.location.name)
+               }
+           ) {
+               Image (
+                   painter = painterResource(R.drawable.right_arrow),
+                   contentDescription = "Forecast"
                )
            }
-           WeatherImage(R.drawable.pressure)
-           Column {
-               BaseText("Pressure")
-               BaseText(
-                   text = "${current.current.pressureMb.toInt()} mb",
-                   fontSize = 24,
-                   color = PrimaryColor
-               )
-           }
+           Text(
+               modifier = Modifier.align(Alignment.CenterHorizontally),
+               text = "Go to Forecast",
+               fontSize = 20.sp,
+               fontWeight = FontWeight.SemiBold,
+               fontFamily = FontFamily.SansSerif,
+               color = Color.White
+           )
        }
-       SpacerHeight(Dimen.LargeSpace)
-       IconButton (
-           modifier = Modifier.clip(CircleShape).fillMaxWidth(),
-           onClick = {
-               navigateToForecast(current.location.name)
-           }
-       ) {
-            Image (
-                painter = painterResource(R.drawable.right_arrow),
-                contentDescription = "Forecast"
-            )
-       }
-       Text(
-           modifier = Modifier.align(Alignment.CenterHorizontally),
-           text = "Go to Forecast",
-           fontSize = 20.sp,
-           fontWeight = FontWeight.SemiBold,
-           fontFamily = FontFamily.SansSerif,
-           color = Color.White
-       )
        SpacerHeight(Dimen.LargeSpace)
    }
 }
