@@ -9,7 +9,7 @@
 ### 🔹 Coroutines & Flow for Asynchronous Programming
 ### 🔹 Coil for image loading
 ### 🔹 Material-3 Design for UI/UX
-### 🔹 Preference Datastore for managing user preferences
+### 🔹 Preference Datastore for managing preferences
 
 # How does the app work?
 ### 📼 Two Screens ( Current Weather + Forecast Weather )
@@ -18,7 +18,7 @@
 
 # How to install this app ?
 Just copy this url ``` https://github.com/Mohamed-Ramadan-195/Weatherly ``` and clone it in your android studio.
-You can download APK from this link ```https://drive.google.com/file/d/1cmagj5LFnLDhELu3p77XYp5DM_NY9JNR/view?usp=sharing```
+You can download APK from this link ```https://drive.google.com/file/d/1YZ74ubCOSRQnJwRBn_AoxWc6sYxT4abh/view?usp=sharing```
 
 # Live Demo
-```https://drive.google.com/file/d/1YZ74ubCOSRQnJwRBn_AoxWc6sYxT4abh/view?usp=sharing```
+```https://drive.google.com/file/d/1cmagj5LFnLDhELu3p77XYp5DM_NY9JNR/view?usp=sharing```
