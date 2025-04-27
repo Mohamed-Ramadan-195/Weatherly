@@ -20,21 +20,13 @@ class WeatherRepositoryImpl (
         }
     }
 
-    override suspend fun getForecastWeather(latitude: Double, longitude: Double): ForecastWeather {
-        return weatherService.getForecastWeather(latitude, longitude)
+    override suspend fun getForecastWeather(city: String): Flow<ForecastWeather> {
+        return flow {
+            val response = weatherService.getForecastWeather(city)
+            emit(response)
+        }.catch {
+            println("error: ${it.message}")
+        }
     }
-
-//    override suspend fun getForecastWeather(
-//        latitude: Double,
-//        longitude: Double,
-//    ): Flow<ForecastWeather> {
-//        return flow {
-//            val response = weatherService.getForecastWeather(latitude, longitude)
-//            emit(response)
-//        }.catch {
-//            println("error: ${it.message}")
-//        }
-//    }
-
 
 }

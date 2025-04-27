@@ -4,7 +4,6 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.weatherly.domain.model.CityWeather
 import com.example.weatherly.domain.usecase.datastore.CityWeatherUseCases
 import com.example.weatherly.domain.usecase.weather.WeatherUseCases
 import com.example.weatherly.presentation.screen.CurrentWeather.state.CurrentWeatherEvent
@@ -49,18 +48,15 @@ class CurrentWeatherViewModel @Inject constructor(
                     )
 
                     saveCityWeather(
-                        CityWeather(
-                            cityName = currentWeather.name,
-                            id = currentWeather.id
-                        )
+                        city = currentWeather.location.name
                     )
                 }
         }
     }
 
-    private fun saveCityWeather(cityWeather: CityWeather) {
+    private fun saveCityWeather(city: String) {
         viewModelScope.launch {
-            cityWeatherUseCases.saveCityWeather(cityWeather)
+            cityWeatherUseCases.saveCityWeather(city)
         }
     }
 
@@ -68,7 +64,7 @@ class CurrentWeatherViewModel @Inject constructor(
         viewModelScope.launch {
             cityWeatherUseCases.readCityWeather().collectLatest { savedCityWeather ->
                 _currentWeatherState.value = _currentWeatherState.value.copy(
-                    city = savedCityWeather.cityName
+                    city = savedCityWeather
                 )
                 getCurrentWeather()
             }

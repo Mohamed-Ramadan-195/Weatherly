@@ -1,11 +1,11 @@
 package com.example.weatherly.data.dto
 
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Clouds(
-    @SerializedName("all")
-    val all: Int
+data class Condition(
+    val code: Int,
+    val icon: String,
+    val text: String
 ): Parcelable

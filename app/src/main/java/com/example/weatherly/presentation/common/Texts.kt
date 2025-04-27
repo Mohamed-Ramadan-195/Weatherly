@@ -3,23 +3,25 @@ package com.example.weatherly.presentation.common
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.weatherly.ui.theme.PrimaryColor
 
 @Composable
-fun InfoText (
+fun BaseText(
+    text: String,
     modifier: Modifier = Modifier,
-    address: String,
-    info: String
+    fontSize: Int = 16,
+    fontWeight: FontWeight = FontWeight.Bold,
+    color: Color = Color.White
 ) {
-    Text (
+    Text(
+        text = text,
         modifier = modifier,
-        text = "$address: $info",
-        fontFamily = FontFamily.Serif,
-        fontWeight = FontWeight.Bold,
-        fontSize = 14.sp,
-        color = PrimaryColor
+        fontSize = fontSize.sp,
+        fontWeight = fontWeight,
+        color = color,
+        fontFamily = FontFamily.Serif
     )
 }

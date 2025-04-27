@@ -1,0 +1,7 @@
+package com.example.weatherly.presentation.screen.ForecastWeather.state
+
+import com.example.weatherly.data.dto.ForecastWeather
+
+data class ForecastWeatherState(
+    val forecastWeather: ForecastWeather = ForecastWeather.default()
+)

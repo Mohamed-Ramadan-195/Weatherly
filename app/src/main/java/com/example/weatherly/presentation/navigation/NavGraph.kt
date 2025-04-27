@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.weatherly.presentation.screen.CurrentWeather.view.CurrentWeatherScreen
-import com.example.weatherly.presentation.screen.ForecastWeather.ForecastWeatherScreen
+import com.example.weatherly.presentation.screen.ForecastWeather.view.ForecastWeatherScreen
 
 @Composable
 fun NavGraph (
@@ -25,11 +25,10 @@ fun NavGraph (
             route = Route.CurrentWeather.route,
         ) {
             CurrentWeatherScreen(
-                navigateToForecast = { latitude, longitude ->
+                navigateToForecast = { city ->
                     navigateToForecastWeatherScreen(
                         navController = navHostController,
-                        latitude = latitude,
-                        longitude = longitude
+                        city = city
                     )
                 }
             )
@@ -48,12 +47,13 @@ fun NavGraph (
                 )
             }
         ) {
-            val latitude = navHostController.previousBackStackEntry?.savedStateHandle?.get<Double>("latitude")
-            val longitude = navHostController.previousBackStackEntry?.savedStateHandle?.get<Double>("longitude")
+            val city = navHostController.previousBackStackEntry?.savedStateHandle?.get<String>("city")
 
             ForecastWeatherScreen(
-                latitude = latitude ?: 0.0,
-                longitude = longitude ?: 0.0,
+                city = city?: "No city found, please try again",
+                navigateUp = {
+                    navHostController.navigateUp()
+                }
             )
         }
     }
@@ -61,10 +61,8 @@ fun NavGraph (
 
 private fun navigateToForecastWeatherScreen (
     navController: NavController,
-    latitude: Double,
-    longitude: Double
+    city: String
 ) {
-    navController.currentBackStackEntry?.savedStateHandle?.set("latitude", latitude)
-    navController.currentBackStackEntry?.savedStateHandle?.set("longitude", longitude)
+    navController.currentBackStackEntry?.savedStateHandle?.set("city", city)
     navController.navigate(Route.ForecastWeather.route)
 }

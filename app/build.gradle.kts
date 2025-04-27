@@ -93,4 +93,7 @@ dependencies {
 
     // Accompanist System UI Controller
     implementation(libs.accompanist.systemuicontroller)
+
+    // Material Icons
+    implementation(libs.androidx.material.icons.extended)
 }
