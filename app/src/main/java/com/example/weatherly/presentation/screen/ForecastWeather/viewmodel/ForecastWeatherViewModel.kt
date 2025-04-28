@@ -35,14 +35,5 @@ class ForecastWeatherViewModel @Inject constructor(
                     )
                 }
         }
-//        viewModelScope.launch {
-//            _forecastWeatherState.value = _forecastWeatherState.value.copy()
-//            try {
-//                val forecastWeather = weatherUseCases.getForecastWeatherUseCase(city = city)
-//                _forecastWeatherState.value = ForecastWeatherState(forecastWeather)
-//            } catch (exception: Exception) {
-//                _forecastWeatherState.value = ForecastWeatherState()
-//            }
-//        }
     }
 }

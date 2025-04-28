@@ -7,7 +7,7 @@ import com.example.weatherly.data.dto.ForecastWeather
 import com.example.weatherly.data.dto.Location
 
 fun createForecastWeather(
-    city: String
+    city: String?
 ): ForecastWeather {
     return ForecastWeather(
         current = Current (
@@ -52,7 +52,7 @@ fun createForecastWeather(
             localtime = "",
             localtimeEpoch = 0,
             lon = 0.0,
-            name = city,
+            name = city ?: "",
             region = "",
             tzId = "",
         )

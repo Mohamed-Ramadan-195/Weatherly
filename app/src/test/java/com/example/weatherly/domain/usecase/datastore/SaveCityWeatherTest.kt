@@ -22,13 +22,10 @@ class SaveCityWeatherTest {
 
     @Test
     fun `should save city weather in preference datastore`() = runTest {
-        // Given
         val city = "Cairo"
 
-        // When
         saveCityWeather.invoke(city)
 
-        // Then
         verify(datastoreManager, times(1)).saveCityWeather(city)
     }
 }

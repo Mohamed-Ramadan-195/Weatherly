@@ -26,14 +26,11 @@ class ReadCityWeatherTest {
 
     @Test
     fun `should read city weather from datastore`() = runTest {
-        // Given
         val expectedCity = "Cairo"
         whenever(datastoreManager.readCityWeather()).thenReturn(flowOf(expectedCity))
 
-        // When
         val result = readCityWeather.invoke().first()
 
-        // Then
         assertEquals(expectedCity, result)
         verify(datastoreManager, times(1)).readCityWeather()
     }
